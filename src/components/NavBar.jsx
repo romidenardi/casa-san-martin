@@ -1,15 +1,19 @@
+import './CustomStyles.css';
+import CartWidget from './CartWidget';
+
 function NavBar() {
     return (
-        <nav style={{backgroundColor:"grey"}}>
-            <p style={{color:"white", fontWeight:"bolder"}}>Casa San Martín</p>
+        <nav className="navbar">
+            <img src="assets/csm-logo.png" alt="Casa San Martín"/>
             <ul>
-                <li style={{listStyleType:"none"}}><a style={{textDecoration:"none", color:"white"}} href="#">Home</a></li>
-                <li style={{listStyleType:"none"}}><a style={{textDecoration:"none", color:"white"}} href="#">Nosotros</a></li>
-                <li style={{listStyleType:"none"}}><a style={{textDecoration:"none", color:"white"}} href="#">Lanas</a></li>
-                <li style={{listStyleType:"none"}}><a style={{textDecoration:"none", color:"white"}} href="#">Mercería</a></li>
-                <li style={{listStyleType:"none"}}><a style={{textDecoration:"none", color:"white"}} href="#">Librería</a></li>
-                <li style={{listStyleType:"none"}}><a style={{textDecoration:"none", color:"white"}} href="#">Juguetería</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Lanas</a></li>
+                <li><a href="#">Mercería</a></li>
+                <li><a href="#">Librería</a></li>
+                <li><a href="#">Juguetería</a></li>
             </ul>
+            <CartWidget/>
         </nav>
     )
 }
