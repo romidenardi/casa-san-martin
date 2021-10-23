@@ -1,7 +1,7 @@
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 
-const NavBar = ()=> {
+const NavBar = () => {
     return (
         <nav className="navbar">
             <img src="assets/csm-logo.png" alt="Casa San Martín"/>

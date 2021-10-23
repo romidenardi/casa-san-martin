@@ -1,6 +1,6 @@
 import './CartWidget.css';
 
-const CartWidget = ()=> {
+const CartWidget = () => {
     return (
         <button className="navbar-cart">
             <img src="assets/csm-icon-cart.png" alt="Carrito"/>
