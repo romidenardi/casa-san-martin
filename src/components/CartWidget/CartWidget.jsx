@@ -1,6 +1,6 @@
-import './CustomStyles.css';
+import './CartWidget.css';
 
-function CartWidget() {
+const CartWidget = ()=> {
     return (
         <button className="navbar-cart">
             <img src="assets/csm-icon-cart.png" alt="Carrito"/>

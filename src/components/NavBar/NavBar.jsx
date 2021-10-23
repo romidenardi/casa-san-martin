@@ -1,7 +1,7 @@
-import './CustomStyles.css';
-import CartWidget from './CartWidget';
+import './NavBar.css';
+import CartWidget from '../CartWidget/CartWidget';
 
-function NavBar() {
+const NavBar = ()=> {
     return (
         <nav className="navbar">
             <img src="assets/csm-logo.png" alt="Casa San Martín"/>

@@ -3,13 +3,6 @@
     padding:20px;
 }
 
-.navbar-cart {
-    background-color:white;
-    padding:15px;
-    border-radius:20px;
-    border-style:none;
-}
-
 nav ul li {
     list-style-type:none;
     display:inline;
@@ -26,14 +19,3 @@ nav ul li a:hover {
     color:#df5166;
 }
 
-.container {
-    padding:20px;
-}
-
-.tittle {
-    color:darkgray;
-}
-
-.copy {
-    color:#BE1931;
-}
