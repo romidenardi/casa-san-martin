@@ -5,15 +5,3 @@
     margin-top:25px;
     padding:10px;
 }
-
-.product-card {
-    margin:10px;
-    padding:15px;
-    border-radius:20px;
-    border-style:dotted;
-    border-color:lightgray;
-}
-
-.product-img {
-    width:50%;
-}
