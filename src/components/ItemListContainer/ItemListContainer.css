@@ -1,11 +1,11 @@
-.container {
+.list-container {
     padding:20px;
 }
 
-.title {
+.list-title {
     color:darkgray;
 }
 
-.copy {
+.list-copy {
     color:#BE1931;
 }

@@ -7,10 +7,10 @@ const cataloge = [
     { id:"0006", title:"Canopla marrón y naranja", price:310, pictureUrl:"assets/canopla-marron-naranja.png", stock:9 },
 ];
 
-const GetFetch = new Promise((resolve, reject) =>{
+const GetFetchList = new Promise((resolve, reject) =>{
     setTimeout(() =>{
         resolve(cataloge)
     }, 2000)
 })
 
-export default GetFetch
+export default GetFetchList

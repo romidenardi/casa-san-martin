@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import GetFetch from '../../services/GetFetch';
+import GetFetchList from '../../services/GetFetchList';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
@@ -8,7 +8,7 @@ const ItemListContainer = () => {
     const [product, setProduct] = useState([])
 
     useEffect(() => {
-        GetFetch
+        GetFetchList
         .then(response => {        
             setProduct(response)
         })
@@ -16,9 +16,9 @@ const ItemListContainer = () => {
     },[])   
 
     return (
-            <div className="container">
-                <h1 className ="title">Sitio en construcción</h1>
-                <p className ="copy">¡La esquina más querida del barrio muy pronto va a estar online!</p>
+            <div className="list-container">
+                <h1 className ="list-title">Sitio en construcción</h1>
+                <p className ="list-copy">¡La esquina más querida del barrio muy pronto va a estar online!</p>
                 <ItemList product={product}/>
             </div>
     )
