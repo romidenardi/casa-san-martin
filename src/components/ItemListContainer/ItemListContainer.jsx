@@ -8,16 +8,16 @@ const ItemListContainer = () => {
 
     const [product, setProduct] = useState([])
 
-    const {categorie} = useParams()
+    const {categoryId} = useParams()
 
     useEffect(() => {
 
-        if (categorie) {
+        if (categoryId) {
             GetFetchList
             .then(response => {        
-                setProduct(response.filter(prod => prod.categorie === categorie))
+                setProduct(response.filter(prod => prod.categorie === categoryId))
             })
-            .catch (error => console.log(error))
+            .catch (error => alert("Error:", error))
         }
         
         else {
@@ -25,14 +25,12 @@ const ItemListContainer = () => {
             .then(response => {        
                 setProduct(response)
             })
-            .catch (error => console.log(error))
+            .catch (error => alert("Error:", error))
         }
-    },[categorie])
+    },[categoryId])
 
     return (
             <div className="list-container">
-                <h1 className ="list-title">Sitio en construcción</h1>
-                <p className ="list-copy">¡La esquina más querida del barrio muy pronto va a estar online!</p>
                 <ItemList product={product}/>
             </div>
     )

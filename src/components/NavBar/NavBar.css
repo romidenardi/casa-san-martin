@@ -3,13 +3,56 @@
     padding:20px;
 }
 
+nav ul {
+    padding:0px;
+}
+
 nav ul li {
     list-style-type:none;
-    display:inline;
-    padding:25px;
+}
+
+@media (max-width:480px) {
+
+    .navbar {
+        display:grid;
+        grid-template-areas:
+        "logo cart"
+        "menu menu";
+    }
+
+    .logo {
+        grid-area:logo;
+    }
+
+    .cart {
+        grid-area:cart;
+    }
+
+    .menu {
+        grid-area:menu;
+        margin-top:20px;
+    }
+
+    nav ul li {
+        padding-top:7px;
+    }
+}
+
+@media (min-width:481px) {
+
+    .navbar {
+        display:flex;
+        flex-direction:row;
+    }
+
+    nav ul li {
+        display:inline;
+        padding:25px;
+    }
 }
 
 nav ul li a {
+    text-transform:uppercase;
     text-decoration:none;
     color:#BE1931;
 }

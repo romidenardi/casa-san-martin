@@ -3,7 +3,7 @@ import './CartWidget.css';
 const CartWidget = () => {
     return (
         <button className="navbar-cart">
-            <img src="assets/csm-icon-cart.png" alt="Carrito"/>
+            <img src="../assets/csm-icon-cart.png" alt="Carrito"/>
         </button>
     )
 }

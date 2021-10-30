@@ -17,7 +17,7 @@ const ItemCount = ({initial, stock}) =>{
     }
     
     return (
-        <div>
+        <div className="qty-container">
             <div className="qty-selectors">
                 <button className="qty-buttom"onClick={decreaseQty} disabled={(qty<=initial) ? true : false}>-</button>
                 <div className="qty-display">{qty}</div>
