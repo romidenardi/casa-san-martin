@@ -1,4 +1,4 @@
-.product-card {
+.item-card {
     margin:5px;
     padding:15px;
     border-radius:20px;
@@ -7,28 +7,28 @@
 }
 
 @media (max-width:480px) {
-    .product-card {
+    .item-card {
         width:90%;
     }
 }
 
-.product-img {
+.item-img {
     width:200px;
 }
 
-.product-buttom {
+.item-buttom {
     color:#BE1931;
     background-color:white;
     border-style:none;
     padding:5px;
 }
 
-.product-title{
+.item-title{
     font-size:22px;
     font-weight:bold;
 }
 
-.product-price{
+.item-price{
     font-size:20px;
     font-weight:bold;
     color:darkgray;

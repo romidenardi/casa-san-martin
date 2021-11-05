@@ -2,34 +2,34 @@ import {useState} from 'react';
 import {Link} from "react-router-dom"
 import './ItemCount.css';
 
-const ItemCount = ({initial, stock, onAdd}) =>{
+const ItemCount = ({initial, stock, addToCart}) =>{
 
-    const [qty, setQty] = useState(initial);
+    const [quantity, setQuantity] = useState(initial);
     const [changeButtom, setChangeButtom] = useState(false);
     
-    const decreaseQty = () => {
-        setQty(qty-1);     
+    const decreaseQuantity = () => {
+        setQuantity(quantity-1);     
     }   
-    const increaseQty = () => {
-        setQty(qty+1);     
+    const increaseQuantity = () => {
+        setQuantity(quantity+1);     
     }
 
-    const handlerOnAdd = () => {
-    onAdd(qty);
-    alert(`Agregaste ${qty} unidad(es) a tu carrito`);
+    const addToCartHandler = () => {
+    addToCart (quantity);
+    alert(`Agregaste ${quantity} unidad(es) a tu carrito`);
     setChangeButtom(true);
     }
 
     return (
-        <div className="qty-container">
-            <div className="qty-selectors">
-                <button className="qty-buttom"onClick={decreaseQty} disabled={(qty<=initial) ? true : false}>-</button>
-                <div className="qty-display">{qty}</div>
-                <button className="qty-buttom" onClick={increaseQty} disabled={(qty>=stock) ? true : false}>+</button>
+        <div className="quantity-container">
+            <div className="quantity-selectors">
+                <button className="quantity-buttom"onClick={decreaseQuantity} disabled={(quantity<=initial) ? true : false}>-</button>
+                <div className="quantity-display">{quantity}</div>
+                <button className="quantity-buttom" onClick={increaseQuantity} disabled={(quantity>=stock) ? true : false}>+</button>
             </div>
             {changeButtom 
-            ? <Link to="/cart"><button className="purchase">Terminar compra</button></Link>
-            : <button className="qty-add" onClick={handlerOnAdd}>Agregar al carrito</button>
+            ? <Link to="/cart"><button className="purchase-buttom">Terminar compra</button></Link>
+            : <button className="quantity-add" onClick={addToCartHandler}>Agregar al carrito</button>
             }
         </div>
     )

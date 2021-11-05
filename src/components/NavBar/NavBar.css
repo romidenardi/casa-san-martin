@@ -20,15 +20,15 @@ nav ul li {
         "menu menu";
     }
 
-    .logo {
+    .navbar-logo {
         grid-area:logo;
     }
 
-    .cart {
+    .navbar-cart {
         grid-area:cart;
     }
 
-    .menu {
+    .navbar-menu {
         grid-area:menu;
         margin-top:20px;
     }

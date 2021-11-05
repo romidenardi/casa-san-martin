@@ -1,7 +1,7 @@
-const catalogeDetail = [
+const catalogue = [
     
     { id:"0001", 
-    categorie:"libreria",
+    category:"libreria",
     title:"Lapicera azul", 
     description:"Lapicera azul trazo fino. Precisión al escribir. Alta durabilidad.",
     brand:"Filgo",
@@ -10,7 +10,7 @@ const catalogeDetail = [
     stock:5 },
 
     { id:"0002", 
-    categorie:"libreria", 
+    category:"libreria", 
     title:"Lapicera roja", 
     description:"Lapicera roja trazo fino. Precisión al escribir. Alta durabilidad.",
     brand:"Filgo",
@@ -19,7 +19,7 @@ const catalogeDetail = [
     stock:8 },
 
     { id:"0003", 
-    categorie:"libreria", 
+    category:"libreria", 
     title:"Lápiz", 
     description:"Lapiz blando, de trazo medio. Ideal para aprender a escribir. Fácil de borrar.",
     brand:"Maped",
@@ -28,7 +28,7 @@ const catalogeDetail = [
     stock:10 },
 
     { id:"0004", 
-    categorie:"libreria", 
+    category:"libreria", 
     title:"Caja de 36 colores",     
     description:"Caja de 36 colores, de trazo grueso. Excelente calidad.",
     brand:"Maped",
@@ -37,7 +37,7 @@ const catalogeDetail = [
     stock:7 },
     
     { id:"0005", 
-    categorie:"libreria", 
+    category:"libreria", 
     title:"Set de 4 resaltadores", 
     description:"Set de 4 resaltadores. Color amarillo, naranja, fucsia y verde.",
     brand:"Maped",
@@ -46,7 +46,7 @@ const catalogeDetail = [
     stock:6 },
 
     { id:"0006", 
-    categorie:"libreria", 
+    category:"libreria", 
     title:"Canopla marrón y naranja", 
     description:"Canopla tipo tubo, con costuras reforzadas. Color marrón, con detalles en naranja.",
     brand:"Lulens",
@@ -55,7 +55,7 @@ const catalogeDetail = [
     stock:9 },
     
     { id:"0007", 
-    categorie:"lanas", 
+    category:"lanas", 
     title:"Ovillo de lana azul", 
     description:"Ovillo de lana azul de 10 m de largo. Textura suave y color brillante.",
     brand:"La Tejedora",
@@ -64,7 +64,7 @@ const catalogeDetail = [
     stock:12 },
     
     { id:"0008", 
-    categorie:"merceria", 
+    category:"merceria", 
     title:"Set de 6 hilos para coser", 
     description:"Set de 6 hilos para coser tamaño grande. Color rosa, lila, verde, amarillo, rojo y verde.",
     brand:"La Tejedora",
@@ -73,7 +73,7 @@ const catalogeDetail = [
     stock:14 },
     
     { id:"0009", 
-    categorie:"jugueteria", 
+    category:"jugueteria", 
     title:"Mono Lulo", 
     description:"Mono de peluche. Muy suave. Excelente calidad. Detalles y terminaciones premium.",
     brand:"Mis Animalitos",
@@ -82,7 +82,7 @@ const catalogeDetail = [
     stock:3 },
     
     { id:"0010", 
-    categorie:"jugueteria", 
+    category:"jugueteria", 
     title:"Bloques de madera", 
     description:"Set de cubos de madera para apilar. Terminaciones delicadas. Ideal para la primera infancia.",
     brand:"Kiddies",
@@ -91,7 +91,7 @@ const catalogeDetail = [
     stock:9 },
     
     { id:"0011", 
-    categorie:"lanas", 
+    category:"lanas", 
     title:"Ovillo de lana roja", 
     description:"Ovillo de lana roja de 8 m de largo. Textura suave y color brillante.",
     brand:"La Tejedora",
@@ -100,7 +100,7 @@ const catalogeDetail = [
     stock:7 },
 
     { id:"0012", 
-    categorie:"merceria", 
+    category:"merceria", 
     title:"Bobina de hilo sisal", 
     description:"Bobina de hilo sisal para manualidades, de 10 m de largo.",
     brand:"Marucha",
@@ -109,7 +109,7 @@ const catalogeDetail = [
     stock:4 },
 
     { id:"0013", 
-    categorie:"lanas", 
+    category:"lanas", 
     title:"Bobina de hilo para tejer beige", 
     description:"Bobina de hilo para tejer beige de 12 m de largo. Calidad premium.",
     brand:"La Tejedora",
@@ -118,7 +118,7 @@ const catalogeDetail = [
     stock:6 },
 
     { id:"0014", 
-    categorie:"merceria", 
+    category:"merceria", 
     title:"Centímetro", 
     description:"Centímetro de plástico, de 1,5 m de largo,",
     brand:"Marucha",
@@ -127,7 +127,7 @@ const catalogeDetail = [
     stock:12 },
 
     { id:"0015", 
-    categorie:"jugueteria", 
+    category:"jugueteria", 
     title:"Grua mini", 
     description:"Grua de plástico, muy resistente. Alto de 15 cm.",
     brand:"Kiddies",
@@ -136,7 +136,7 @@ const catalogeDetail = [
     stock:17 },
 
     { id:"0016", 
-    categorie:"jugueteria", 
+    category:"jugueteria", 
     title:"Avioncito", 
     description:"Avioncito de plástico, con colores brillantes y hélice.",
     brand:"Kiddies",
@@ -145,7 +145,7 @@ const catalogeDetail = [
     stock:13 },
 
     { id:"0017", 
-    categorie:"jugueteria", 
+    category:"jugueteria", 
     title:"Set de chiches para el agua", 
     description:"Set de elefante, pato y foca, en plástico blando. Con chillido. Ideal para el momento del baño.",
     brand:"RoPlast",
@@ -154,7 +154,7 @@ const catalogeDetail = [
     stock:10 },
 
     { id:"0018", 
-    categorie:"jugueteria", 
+    category:"jugueteria", 
     title:"Muñeca de tela", 
     description:"Muñeca confeccionada en tela. Vestidito cuadrillé y pelo rubio.",
     brand:"Valery",
@@ -164,10 +164,10 @@ const catalogeDetail = [
 
 ];
 
-const GetFetchDetail = new Promise((resolve, reject) =>{
+const GetFetch = new Promise((resolve, reject) =>{
     setTimeout(() =>{
-        resolve(catalogeDetail)
+        resolve(catalogue)
     }, 2000)
 })
 
-export default GetFetchDetail
+export default GetFetch

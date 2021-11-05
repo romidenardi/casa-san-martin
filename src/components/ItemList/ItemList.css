@@ -14,7 +14,7 @@
 
 @media (min-width:481px) {
 
-    .product-container {
+    .item-container {
         display:grid;
         grid-template-columns:1fr 1fr 1fr;
         gap:15px;

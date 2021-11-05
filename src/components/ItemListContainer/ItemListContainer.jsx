@@ -1,37 +1,37 @@
 import {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom'
-import GetFetchList from '../../services/GetFetchList';
+import {useParams} from 'react-router-dom';
+import GetFetch from '../../services/GetFetch';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
 
-    const [product, setProduct] = useState([])
+    const [itemList, setItemList] = useState([])
 
     const {categoryId} = useParams()
 
     useEffect(() => {
 
         if (categoryId) {
-            GetFetchList
+            GetFetch
             .then(response => {        
-                setProduct(response.filter(prod => prod.categorie === categoryId))
+                setItemList(response.filter(items => items.category === categoryId))
             })
             .catch (error => alert("Error:", error))
         }
         
         else {
-            GetFetchList
+            GetFetch
             .then(response => {        
-                setProduct(response)
+                setItemList(response)
             })
             .catch (error => alert("Error:", error))
         }
     },[categoryId])
 
     return (
-            <div className="list-container">
-                <ItemList product={product}/>
+            <div className="item-list-container">
+                <ItemList itemList={itemList}/>
             </div>
     )
 }

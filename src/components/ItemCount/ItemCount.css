@@ -1,10 +1,10 @@
-.qty-selectors {
+.quantity-selectors {
     display:flex;
     justify-content:center;
     padding:20px;
 }
 
-.qty-buttom {
+.quantity-buttom {
     color:white;
     background-color:#BE1931;
     border-radius:5px;
@@ -13,17 +13,17 @@
     margin:5px 30px 5px 30px;
 }
 
-.qty-buttom:disabled {
+.quantity-buttom:disabled {
     background-color:#d68c97;
 }
 
-.qty-display {
+.quantity-display {
     color:#BE1931;
     padding:10px;
     margin:5px 30px 5px 30px;
 }
 
-.qty-add {
+.quantity-add {
     color:#BE1931;
     background-color:lightgray;
     border-radius:5px;
@@ -31,7 +31,7 @@
     padding:10px;
 }
 
-.purchase {
+.purchase-buttom {
     color:white;
     background-color:#BE1931;
     border-radius:5px;

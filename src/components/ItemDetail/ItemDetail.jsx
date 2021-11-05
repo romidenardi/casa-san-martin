@@ -1,25 +1,25 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'; 
 
-const ItemDetail = ({detail}) => {
+const ItemDetail = ({itemDetail}) => {
     
-    const [qty, setQty] = useState (1)
+    const [quantity, setQuantity] = useState (1)
 
-    const onAdd = (qtyAdded) => {
-        setQty(qtyAdded)
+    const addToCart = (quantityAdded) => {
+        setQuantity(quantityAdded)
     }
 
     return (
-            <div className="product-detail-card" >
-                <img className="product-detail-img" src={detail.pictureUrl} alt={detail.title}/>
+            <div className="item-detail-card" >
+                <img className="item-detail-img" src={itemDetail.pictureUrl} alt={itemDetail.title}/>
                 <div>
-                    <h5 className="product-detail-title">{detail.title}</h5>
-                    <h6 className="product-detail-brand">{detail.brand}</h6>
-                    <p className="product-detail-description">{detail.description}</p>
-                    <p className="product-detail-price">$ {detail.price}</p>
+                    <h5 className="item-detail-title">{itemDetail.title}</h5>
+                    <h6 className="item-detail-brand">{itemDetail.brand}</h6>
+                    <p className="item-detail-description">{itemDetail.description}</p>
+                    <p className="item-detail-price">$ {itemDetail.price}</p>
                 </div>
-                <ItemCount initial={qty} stock={detail.stock} onAdd={onAdd}/>
+                <ItemCount initial={quantity} stock={itemDetail.stock} addToCart={addToCart}/>
             </div>
     )
 }
