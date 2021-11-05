@@ -5,9 +5,9 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
 
-    const [itemDetail, setItemDetail] = useState([])
+    const [itemDetail, setItemDetail] = useState([]);
 
-    const {itemId} = useParams()
+    const {itemId} = useParams();
 
     useEffect(() => {
         GetFetch

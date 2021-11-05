@@ -6,9 +6,9 @@ import './ItemListContainer.css';
 
 const ItemListContainer = () => {
 
-    const [itemList, setItemList] = useState([])
+    const [itemList, setItemList] = useState([]);
 
-    const {categoryId} = useParams()
+    const {categoryId} = useParams();
 
     useEffect(() => {
 

@@ -1,5 +1,5 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import CartContext from './context/CartContext';
+import CartContextProvider from './context/CartContext';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <CartContext.Provider value={[]}>
+      <CartContextProvider>
         <BrowserRouter>
           <NavBar/>
           <Switch>
@@ -21,7 +21,7 @@ function App() {
             <Route exact path="/cart" component={Cart}/>
           </Switch>
         </BrowserRouter>
-      </CartContext.Provider>
+      </CartContextProvider>
     </div>
   );
 }

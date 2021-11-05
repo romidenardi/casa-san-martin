@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 import './ItemCount.css';
 
 const ItemCount = ({initial, stock, addToCart}) =>{
@@ -16,7 +16,6 @@ const ItemCount = ({initial, stock, addToCart}) =>{
 
     const addToCartHandler = () => {
     addToCart (quantity);
-    alert(`Agregaste ${quantity} unidad(es) a tu carrito`);
     setChangeButtom(true);
     }
 

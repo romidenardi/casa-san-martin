@@ -28,8 +28,15 @@
     .item-detail-card {
         display:flex;
         flex-direction:row;
-        justify-content:space-evenly;
         align-items:center;
+    }
+
+    .item-detail-img {
+        margin-left:50px;
+    }
+    
+    .item-detail-info {
+        margin-left:150px;
     }
 
     .item-detail-title, .item-detail-brand, .item-detail-description, .item-detail-price {
