@@ -6,11 +6,9 @@ import './ItemDetail.css';
 const ItemDetail = ({itemDetail}) => {
     
     const [quantity, setQuantity] = useState (1);
-    const {cartList, addToCartList} = useCartContext();
-    console.log(cartList, "Cart List");
+    const {addToCartList} = useCartContext();
 
     const addToCart = (quantityAdded) => {
-        console.log("desde detail", {itemDetail, quantity:quantityAdded})
         setQuantity(quantityAdded);
         addToCartList({itemDetail, quantity:quantityAdded});
     }
