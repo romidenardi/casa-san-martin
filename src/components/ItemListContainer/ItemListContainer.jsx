@@ -7,6 +7,7 @@ import './ItemListContainer.css';
 const ItemListContainer = () => {
 
     const [itemList, setItemList] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const {categoryId} = useParams();
 
@@ -18,6 +19,7 @@ const ItemListContainer = () => {
                 setItemList(response.filter(items => items.category === categoryId))
             })
             .catch (error => alert("Error:", error))
+            .finally(()=> setLoading(false))
         }
         
         else {
@@ -26,12 +28,16 @@ const ItemListContainer = () => {
                 setItemList(response)
             })
             .catch (error => alert("Error:", error))
+            .finally(()=> setLoading(false))
         }
     },[categoryId])
 
     return (
             <div className="item-list-container">
-                <ItemList itemList={itemList}/>
+                {loading
+                ? <h2 className="loading">Los productos se están cargando</h2>
+                : <ItemList itemList={itemList}/>
+                }
             </div>
     )
 }

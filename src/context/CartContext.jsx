@@ -6,10 +6,14 @@ export const useCartContext = () => useContext (CartContext);
 
 const CartContextProvider = ({children}) => {
 
+    const [itemQuantity, setItemQuantity] = useState(0);
+    const [cartTotal, setCartTotal] = useState(0);
     const [cartList, setCartList] = useState([]);
 
     const addToCartList = itemAdded => {
-        const findItem = cartList.find(itemInCart => itemInCart.itemDetail.id === itemAdded.itemDetail.id)
+        setItemQuantity(itemQuantity + itemAdded.quantity)
+        setCartTotal(cartTotal + (itemAdded.itemDetail.price * itemAdded.quantity))
+        const findItem = cartList.find(itemInCart => itemInCart.itemDetail.id === itemAdded.itemDetail.id)        
         if (findItem) {
             findItem.quantity = findItem.quantity + itemAdded.quantity
             setCartList(cartList)
@@ -20,18 +24,20 @@ const CartContextProvider = ({children}) => {
     }
 
     const removeItem = idItemToRemove => {
-        setCartList(
-            cartList.filter(itemSearched => itemSearched.itemDetail.id !== idItemToRemove)
-        )
+        const itemToRemove = cartList.find(itemInCart => itemInCart.itemDetail.id === idItemToRemove)
+        setItemQuantity(itemQuantity - itemToRemove.quantity)
+        setCartTotal(cartTotal - (itemToRemove.itemDetail.price * itemToRemove.quantity))
+        setCartList(cartList.filter(itemSearched => itemSearched.itemDetail.id !== idItemToRemove))
     }
 
     const removeCart = () => {
+        setItemQuantity(0)
+        setCartTotal (0)
         setCartList([])
     }
 
-
     return (
-        <CartContext.Provider value={{cartList, addToCartList, removeItem, removeCart}}>
+        <CartContext.Provider value={{cartList, addToCartList, removeItem, removeCart, itemQuantity, cartTotal}}>
             {children}
         </CartContext.Provider>
     )

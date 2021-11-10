@@ -1,7 +1,10 @@
+import {memo} from "react";
 import Item from "../Item/Item";
 import './ItemList.css';
 
-const ItemList = ({itemList}) => {
+const ItemList = memo (
+
+({itemList}) => {
     
     return (
         <div className="item-container">
@@ -10,5 +13,6 @@ const ItemList = ({itemList}) => {
         </div>
     )
 }
+)
 
 export default ItemList

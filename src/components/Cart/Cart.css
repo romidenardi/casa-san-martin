@@ -2,12 +2,21 @@
     margin:20px;
 }
 
-.item-added-card {
+.filled-cart {
     margin:10px;
     padding:15px;
     border-radius:20px;
     border-style:dotted;
     border-color:#df5166;
+}
+
+.not-filled-cart {
+    display:none;
+}
+
+.item-added-card {
+    margin:10px;
+    padding:15px;
 }
 
 .remove-cart, .go-to-home, .remove-item {
@@ -59,7 +68,7 @@
     }
 
     .item-added-info {
-        margin-left:150px;
+        margin-left:50px;
     }
 
     .item-added-title, .item-added-brand, .item-added-description, .item-added-price, .item-added-quantity {
@@ -69,7 +78,7 @@
     }
 
     .remove-item {
-        margin-left:150px;
+        margin-left:50px;
     }
 }
 
@@ -98,6 +107,12 @@
 
 .item-added-quantity{
     font-size:20px;
+    font-weight:bold;
+    color:#BE1931;
+}
+
+.cart-total {
+    font-size:22px;
     font-weight:bold;
     color:#BE1931;
 }

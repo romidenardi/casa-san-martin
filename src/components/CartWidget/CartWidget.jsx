@@ -4,16 +4,22 @@ import './CartWidget.css';
 
 const CartWidget = () => {
 
-    const {cartList} = useCartContext()
+        const {itemQuantity} = useCartContext()
 
-    return (
-        <Link to="/cart" className="cartwidget-container">
-            <button className="cartwidget">
-                <p className="cartwidget-quantity">{cartList.length}</p>
-                <img src="../assets/csm-icon-cart.png" alt="Carrito"/>
-            </button>
-        </Link>
-    )
-}
+            return (
+                <Link to="/cart" 
+                className=
+                {itemQuantity>0
+                ? "cartwidget-container"
+                : "hide-cartwidget"
+                }   
+                >
+                    <button className="cartwidget">
+                    <p className="cartwidget-quantity">{itemQuantity}</p>
+                    <img src="../assets/csm-icon-cart.png" alt="Carrito"/>
+                    </button>
+                </Link>
+            )
+        }
 
 export default CartWidget
