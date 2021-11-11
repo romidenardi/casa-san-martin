@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
-import GetFetch from '../../services/GetFetch';
+import {getFirestore} from '../../services/GetFirestore';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
@@ -13,23 +13,28 @@ const ItemListContainer = () => {
 
     useEffect(() => {
 
-        if (categoryId) {
-            GetFetch
-            .then(response => {        
-                setItemList(response.filter(items => items.category === categoryId))
-            })
-            .catch (error => alert("Error:", error))
-            .finally(()=> setLoading(false))
-        }
+        const dataBase = getFirestore() 
         
-        else {
-            GetFetch
-            .then(response => {        
-                setItemList(response)
-            })
+        if (categoryId) {
+
+            const dataBaseQuery = dataBase.collection("items").where("category", "==", categoryId).get()
+
+            dataBaseQuery
+            .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
             .catch (error => alert("Error:", error))
             .finally(()=> setLoading(false))
         }
+
+        else {
+
+            const dataBaseQuery = dataBase.collection("items").orderBy("category").get()
+
+            dataBaseQuery
+            .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
+            .catch (error => alert("Error:", error))
+            .finally(()=> setLoading(false))
+        } 
+
     },[categoryId])
 
     return (
