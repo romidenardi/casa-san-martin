@@ -14,9 +14,7 @@ const ItemDetailContainer = () => {
 
         const dataBase = getFirestore()
 
-        const dataBaseQuery = dataBase.collection("items").doc(itemId).get()
-
-        dataBaseQuery
+        dataBase.collection("items").doc(itemId).get()
         .then(item => setItemDetail({id:item.id, ...item.data()}))
         .catch (error => alert("Error:", error))
         .finally(()=> setLoading(false))

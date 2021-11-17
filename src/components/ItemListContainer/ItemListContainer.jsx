@@ -17,9 +17,9 @@ const ItemListContainer = () => {
         
         if (categoryId) {
 
-            const dataBaseQuery = dataBase.collection("items").where("category", "==", categoryId).get()
+            const dataBaseByCategory= dataBase.collection("items").where("category", "==", categoryId).get()
 
-            dataBaseQuery
+            dataBaseByCategory
             .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
             .catch (error => alert("Error:", error))
             .finally(()=> setLoading(false))
@@ -27,9 +27,9 @@ const ItemListContainer = () => {
 
         else {
 
-            const dataBaseQuery = dataBase.collection("items").orderBy("category").get()
+            const totalDataBase = dataBase.collection("items").orderBy("category").get()
 
-            dataBaseQuery
+            totalDataBase
             .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
             .catch (error => alert("Error:", error))
             .finally(()=> setLoading(false))
