@@ -105,20 +105,20 @@ const Cart = () => {
                     <legend className="form-legend">Ingresá tus datos</legend>
                     <div>
                         <label htmlFor="name" className="form-label">Nombre</label>
-                        <input type="text" name="name" placeholder="Juan" value={userForm.name}/>
+                        <input type="text" name="name" placeholder="Juan" defaultValue={userForm.name}/>
                     </div>
                     <div>
                         <label htmlFor="surname" className="form-label">Apellido</label>
-                        <input type="text" name="surname" placeholder="Pérez" value={userForm.surname}/>
+                        <input type="text" name="surname" placeholder="Pérez" defaultValue={userForm.surname}/>
                     </div>
                     <div>
                         <label htmlFor="phone" className="form-label">Teléfono</label>
-                        <input type="text" name="phone" placeholder="3492123456" value={userForm.phone}/> 
+                        <input type="text" name="phone" placeholder="3492123456" defaultValue={userForm.phone}/> 
                         <p>Ingresá tu número de celular con el código de área, sin el 0 ni el 15.</p>
                     </div>
                     <div>
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" name="email" placeholder="ejemplo@tuemail.com" value={userForm.email}/>
+                        <input type="email" name="email" placeholder="ejemplo@tuemail.com" defaultValue={userForm.email}/>
                     </div>
                     <button className="buy-buttom">¡Comprar!</button>
                 </form>
