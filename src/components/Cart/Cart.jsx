@@ -4,13 +4,13 @@ import {getFirestore} from '../../services/GetFirestore';
 import {Link} from 'react-router-dom';
 import firebase from 'firebase';
 import 'firebase/firestore';
+import UserForm from '../UserForm/UserForm';
 import './Cart.css'; 
 
 const Cart = () => {
     
     const [orderId, setOrderId] = useState("");
-    const [userForm, setUserForm] = useState({name:"", surname:"", phone:"", email:""});
-    const {cartList, removeItem, removeCart, cartTotal} = useCartContext();
+    const {cartList, removeItem, removeCart, cartTotal, userData} = useCartContext();
 
     const createOrder = (e) => {
 
@@ -18,13 +18,14 @@ const Cart = () => {
 
         let order = {}
         order.date = firebase.firestore.Timestamp.fromDate(new Date());
-        order.buyer = userForm;
+        order.buyer = userData;
         order.total = cartTotal;
         order.items = cartList.map(itemAdded => {
             const id = itemAdded.itemDetail.id;
             const title = itemAdded.itemDetail.title;
+            const quantity = itemAdded.quantity;
             const subtotal = itemAdded.itemDetail.price * itemAdded.quantity;
-            return {id, title, subtotal}
+            return {id, title, quantity, subtotal}
         })
 
         const dataBase = getFirestore()
@@ -49,13 +50,6 @@ const Cart = () => {
         
         batch.commit()
         .catch (error => alert("Error:", error))
-        })
-    }
-
-    const handleChange = (e) => {
-        setUserForm({
-            ...userForm, 
-            [e.target.name]: e.target.value
         })
     }
 
@@ -100,27 +94,7 @@ const Cart = () => {
                 <div>
                     <p className="cart-total">Total de la compra: $ {cartTotal}</p>
                 </div>
-                <form onSubmit={createOrder} onChange={handleChange}>
-                    <legend className="form-legend">Ingresá tus datos</legend>
-                    <div>
-                        <label htmlFor="name" className="form-label">Nombre</label>
-                        <input type="text" name="name" placeholder="Juan" defaultValue={userForm.name}/>
-                    </div>
-                    <div>
-                        <label htmlFor="surname" className="form-label">Apellido</label>
-                        <input type="text" name="surname" placeholder="Pérez" defaultValue={userForm.surname}/>
-                    </div>
-                    <div>
-                        <label htmlFor="phone" className="form-label">Teléfono</label>
-                        <input type="text" name="phone" placeholder="3492123456" defaultValue={userForm.phone}/> 
-                        <p>Ingresá tu número de celular con el código de área, sin el 0 ni el 15.</p>
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" name="email" placeholder="ejemplo@tuemail.com" defaultValue={userForm.email}/>
-                    </div>
-                    <button className="buy-buttom">¡Comprar!</button>
-                </form>
+                <UserForm createOrder={createOrder}/>
             </div>
         </div>
     )
