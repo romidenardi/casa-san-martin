@@ -1,0 +1,18 @@
+.empty-page {
+    margin:20px;
+}
+
+.go-to-home {
+    color:#BE1931;
+    background-color:lightgray;
+    border-radius:5px;
+    border-style:none;
+    text-decoration:none;
+    padding:10px;
+    margin:20px;
+}
+
+.go-to-home:hover {
+    text-decoration:none;
+    color:#df5166;
+}
