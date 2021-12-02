@@ -18,12 +18,9 @@ const ItemDetailContainer = () => {
 
         dataBase.collection("items").doc(itemId).get()
         .then((item) => {
-            if (!item.exists){
-                setPageNotFound(true)
-            }
-            else {
-                setItemDetail({id:item.id, ...item.data()})
-            }
+            !item.exists
+            ? setPageNotFound(true)
+            : setItemDetail({id:item.id, ...item.data()})
         }) 
         .catch (error => alert("Error:", error))
         .finally(()=> setLoading(false))

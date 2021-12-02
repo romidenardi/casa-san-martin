@@ -6,7 +6,21 @@ const UserForm = ({createOrder}) =>{
     const {handleForm, userData} = useCartContext();
 
     return (
-        <form onChange={handleForm} onSubmit={createOrder}>
+        <form 
+            
+            onChange={handleForm} 
+            
+            onSubmit={(e) => {
+
+                e.preventDefault()
+
+                userData.email === userData.emailvalidation
+                ? createOrder()
+                : alert("Los correos electrónicos ingresados no son iguales. Intentalo nuevamente")
+                }
+            }
+        >
+
             <legend className="form-legend">Ingresá tus datos</legend>
             <div>
                 <label htmlFor="name" className="form-label">Nombre</label>
@@ -25,7 +39,11 @@ const UserForm = ({createOrder}) =>{
                 <label htmlFor="email" className="form-label">Email</label>
                 <input type="email" name="email" placeholder="ejemplo@tuemail.com" defaultValue={userData.email} required/>
             </div>
-            <button className="buy-buttom">¡Comprar!</button>
+            <div>
+                <label htmlFor="emailvalidation" className="form-label">Ingresá nuevamente tu email</label>
+                <input type="email" name="emailvalidation" placeholder="ejemplo@tuemail.com" defaultValue={userData.emailvalidation} required/>
+            </div>
+            <button type="submit" className="buy-buttom">¡Comprar!</button>
         </form>
     )
 }
