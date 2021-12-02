@@ -9,7 +9,6 @@ const ItemDetailContainer = () => {
     const [itemDetail, setItemDetail] = useState([]);
     const [loading, setLoading] = useState(true);
     const [pageNotFound, setPageNotFound] =useState(false);
-
     const {itemId} = useParams();
 
     useEffect(() => {
@@ -19,8 +18,8 @@ const ItemDetailContainer = () => {
         dataBase.collection("items").doc(itemId).get()
         .then((item) => {
             !item.exists
-            ? setPageNotFound(true)
-            : setItemDetail({id:item.id, ...item.data()})
+                ? setPageNotFound(true)
+                : setItemDetail({id:item.id, ...item.data()})
         }) 
         .catch (error => alert("Error:", error))
         .finally(()=> setLoading(false))

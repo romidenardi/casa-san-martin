@@ -6,12 +6,6 @@
     border-color:lightgray;
 }
 
-@media (max-width:480px) {
-    .item-card {
-        width:90%;
-    }
-}
-
 .item-img {
     width:200px;
 }

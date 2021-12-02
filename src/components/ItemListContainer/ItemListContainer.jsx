@@ -8,7 +8,6 @@ const ItemListContainer = () => {
 
     const [itemList, setItemList] = useState([]);
     const [loading, setLoading] = useState(true);
-
     const {categoryId} = useParams();
 
     useEffect(() => {
@@ -30,8 +29,8 @@ const ItemListContainer = () => {
     return (
             <div className="item-list-container">
                 {loading
-                ? <h2 className="loading">Los productos se están cargando</h2>
-                : <ItemList itemList={itemList}/>
+                    ? <h2 className="loading">Los productos se están cargando</h2>
+                    : <ItemList itemList={itemList}/>
                 }
             </div>
     )

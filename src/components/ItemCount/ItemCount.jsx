@@ -27,8 +27,8 @@ const ItemCount = ({initial, stock, addToCart}) =>{
                 <button className="quantity-buttom" onClick={increaseQuantity} disabled={(quantity>=stock) ? true : false}>+</button>
             </div>
             {changeButtom 
-            ? <Link to="/cart"><button className="purchase-buttom">Finalizar compra</button></Link>
-            : <button className="quantity-add" onClick={addToCartHandler}>Agregar al carrito</button>
+                ? <Link to="/cart"><button className="purchase-buttom">Finalizar compra</button></Link>
+                : <button className="quantity-add" onClick={addToCartHandler}>Agregar al carrito</button>
             }
         </div>
     )

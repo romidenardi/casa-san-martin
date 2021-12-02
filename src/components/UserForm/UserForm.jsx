@@ -15,8 +15,8 @@ const UserForm = ({createOrder}) =>{
                 e.preventDefault()
 
                 userData.email === userData.emailvalidation
-                ? createOrder()
-                : alert("Los correos electrónicos ingresados no son iguales. Intentalo nuevamente")
+                    ? createOrder()
+                    : alert("Los correos electrónicos ingresados no son iguales. Intentalo nuevamente")
                 }
             }
         >

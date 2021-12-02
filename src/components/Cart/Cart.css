@@ -80,7 +80,7 @@
     .remove-item {
         grid-area:remove-item;
     }
-    .item-added-title, .item-added-brand, .item-added-description, .item-added-price, .item-added-quantity {
+    .item-added-title, .item-added-brand, .item-added-description, .item-added-price, .item-added-quantity, .item-added-subtotal {
         text-align:left;
         line-height:1.2;
         margin:15px;
@@ -108,13 +108,13 @@
     font-size:16px;
 }
 
-.item-added-price{
+.item-added-price, .item-added-quantity {
     font-size:20px;
     font-weight:bold;
     color:darkgray;
 }
 
-.item-added-quantity{
+.item-added-subtotal{
     font-size:20px;
     font-weight:bold;
     color:#BE1931;

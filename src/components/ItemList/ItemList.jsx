@@ -5,11 +5,9 @@ import './ItemList.css';
 const ItemList = memo (
 
     ({itemList}) => {
-        
         return (
             <div className="item-container">
-                {itemList.map(item => <Item key={item.id} item={item}/>
-                )}
+                {itemList.map(item => <Item key={item.id} item={item}/>)}
             </div>
         )
     }

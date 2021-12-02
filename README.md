@@ -2,14 +2,22 @@
 
 Este proyecto es una app creada en react para el curso de React JS de Coder House.
 
-Elegí trabajar con un negocio que pertenece a la familia de mis amigos Dani y Guille, en el que se trabajan diversos rubros (lanas, mercería, librería y juguetería). Me pareció interesante poder manejarme con diversidad de categorías y productos, para poder probar las diferentes funcionalidades que vamos a ir aprendiendo en el curso.
+Elegí trabajar con un negocio que pertenece a la familia de mis amigos Dani y Guille, en el que se trabajan diversos rubros (lanas, mercería, librería y juguetería). Me pareció interesante poder manejarme con diversidad de categorías y productos, para poder probar las diferentes funcionalidades que fuimos aprendiendo en el curso.
 
-## Estructura
+El sitio se puede visualizar en https://casa-san-martin.netlify.app/.
 
-Aunque el proyecto está en desarrollo, me imagino una home en la que se puedan mostrar productos destacados, en grupos. Además, cada categoría tendría su página específica, y -si el tiempo y mi aprendizaje me lo permiten- en cada una me gustaría poder aplicar filtros.
+## Estructura y funcionamiento
 
-### Dependencias extra
+El proyecto incluye una home, en la que se muestran todos los productos disponibles, y un menú por categorías.
+Al clickear en el producto, se accede al detalle de este; y desde allí se puede agregar al carrito de compras.
+En el carrito, se visualizan todos los productos agregados, con sus cantidades y subtotales, y el total de la compra.
+El usuario debe cargar sus datos personales, para poder generar la orden.
 
-Tengo instaladas las dependencias de Bootstrap y Reactstrap, con el objetivo de ir mejorando los estilos de la App. Una vez que decida con cuál trabajar, desinstalaré la otra.
+## Dependencias adicionales
 
-También instalé la dependencia de Saas, pero aún no pude estudiar cómo utilizarla. En caso de que los tiempos no me permitan avanzar en este sentido, también la desinstalaré.
+react-router-dom 5.3.0
+Esta dependencia permite generar el ruteo en el navegador, convirtiendo el proyecto en una SPA.
+
+Firebase
+Este servicio, provisto por Google, permite -entre otras cosas- crear y actualizar bases de datos.
+En este proyecto, se utiliza para las BDD de productos y de órdenes de compra.
