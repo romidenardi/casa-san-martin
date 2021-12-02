@@ -40,7 +40,7 @@ const UserForm = ({createOrder}) =>{
                 <input type="email" name="email" placeholder="ejemplo@tuemail.com" defaultValue={userData.email} required/>
             </div>
             <div>
-                <label htmlFor="emailvalidation" className="form-label">Ingresá nuevamente tu email</label>
+                <label htmlFor="emailvalidation" className="form-label">Validá tu Email</label>
                 <input type="email" name="emailvalidation" placeholder="ejemplo@tuemail.com" defaultValue={userData.emailvalidation} required/>
             </div>
             <button type="submit" className="buy-buttom">¡Comprar!</button>

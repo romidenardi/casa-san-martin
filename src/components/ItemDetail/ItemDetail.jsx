@@ -22,7 +22,7 @@ const ItemDetail = ({itemDetail}) => {
                     <p className="item-detail-description">{itemDetail.description}</p>
                     <p className="item-detail-price">$ {itemDetail.price}</p>
                 </div>
-                <ItemCount initial={quantity} stock={itemDetail.stock} addToCart={addToCart}/>
+                <ItemCount className="item-detail-buttons" initial={quantity} stock={itemDetail.stock} addToCart={addToCart}/>
             </div>
     )
 }

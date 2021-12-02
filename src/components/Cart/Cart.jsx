@@ -62,7 +62,7 @@ const Cart = () => {
                 <Link className="go-to-home" to="/"> Ir al inicio</Link>
                 </div>
                 : <div>
-                <p className="empty-cart">¡Gracias por tu compra!</p>
+                <p className="completed-cart">¡Gracias por tu compra!</p>
                 <p className="order-id">Tu código de operación es: {orderId}</p>
                 <Link className="go-to-home" to="/"> Ir al inicio</Link>
                 </div>
